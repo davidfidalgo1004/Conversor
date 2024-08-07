@@ -1,0 +1,38 @@
+﻿<Window x:Class="Conversor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Conversor"
+        mc:Ignorable="d"
+        Title="MainWindow" MinWidth="400" MaxWidth="400" ResizeMode="NoResize" MinHeight="350" MaxHeight="350">
+    <Grid>
+        <Menu HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="400">
+            <MenuItem Header="   Sobre" Height="34" Width="97" >
+                <MenuItem x:Name="PropProg" Header="Propriedades do programador" HorizontalAlignment="Left" Click="PropProg_Click">
+                </MenuItem>
+
+            </MenuItem>
+        </Menu>
+        <ComboBox x:Name="cbTipoConversao" HorizontalAlignment="Left" Margin="30,60,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbTipoConversao_SelectionChanged">
+            <ComboBoxItem IsEnabled="False"/>
+            <ComboBoxItem Content="Tempo" />
+            <ComboBoxItem Content="Moeda" />
+            <ComboBoxItem Content="Energia" />
+            <ComboBoxItem Content="Comprimentos/Distâncias" />
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="41,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pt-pt" Text="Tipo de Conversão"/></TextBlock>
+        <ComboBox x:Name="cbDE" HorizontalAlignment="Left" Margin="30,120,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbDE_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,99,0,0" TextWrapping="Wrap" Text="De:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="233,99,0,0" TextWrapping="Wrap" Text="Para:" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbPARA" HorizontalAlignment="Left" Margin="233,120,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbPARA_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="58,174,0,0" TextWrapping="Wrap" Text="Valor a converter:" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbValorConverter" HorizontalAlignment="Left" Margin="173,174,0,0" TextWrapping="Wrap" Text="Introduza o valor" VerticalAlignment="Top" Width="120" KeyDown="tbValorConverter_KeyDown" GotFocus="TextBox_GotFocus"/>
+        <TextBlock HorizontalAlignment="Left" Margin="58,215,0,0" TextWrapping="Wrap" Text="Valor convertido:" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbValorConvertido" HorizontalAlignment="Left" IsReadOnly="True" Margin="173,214,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+        <TextBlock x:Name="textConverter" HorizontalAlignment="Left" Margin="304,174,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textConvertido" HorizontalAlignment="Left" Margin="304,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tbErroConvertido" HorizontalAlignment="Center" Margin="0,237,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="#FFFC0A0A"/>
+
+    </Grid>
+</Window>
